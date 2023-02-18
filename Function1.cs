@@ -16,15 +16,15 @@ namespace LearnFunction
             var client = new HttpClient();
             var apiEndpoint = "https://localhost:7226/api/Security/register";
             
-            // Set the data to send in the request body
+           
             var requestData = new { email = "leviczne.fps@gmail.com", viajanteName = "Levi Testando Function LesGO", password = "leviczne", confirmPassword = "leviczne"};
             var requestDataJson = JsonSerializer.Serialize(requestData);
             var requestDataContent = new StringContent(requestDataJson, System.Text.Encoding.UTF8, "application/json");
 
-            // Make the request
+          
             var response = await client.PostAsync(apiEndpoint, requestDataContent);
 
-            // Process the response
+            
             if (response.IsSuccessStatusCode)
             {
                 var responseContent = await response.Content.ReadAsStringAsync();
